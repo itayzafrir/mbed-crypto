@@ -28,8 +28,10 @@
  */
 #if defined(MBEDTLS_PSA_CRYPTO_SPM)
 /*
- * PSA_CRYPTO_SECURE means that this file is compiled for the SPE.
- * Some headers will be affected by this flag.
+ * PSA_CRYPTO_SECURE means that the file which included this file is being
+ * compiled for SPE. The files crypto_structs.h and crypto_types.h have
+ * different implementations for NSPE and SPE and are compiled according to this
+ * flag.
  */
 #define PSA_CRYPTO_SECURE 1
 #include "crypto_spe.h"
